@@ -18,6 +18,9 @@
 		<spring-boot.version>2.1.5.RELEASE</spring-boot.version>
 		<spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
 		<logstash-logback-encoder.version>6.1</logstash-logback-encoder.version>
+		<sonar.host.url>http:172.31.72.29:9000/</sonar.host.url>
+		<!--<sonar.login>2475a1093cec27e18633d38bfc3cc0a4284d94b7</sonar.login>-->  
+		<sonar.password>admin</sonar.password>
 	</properties>
 
 	<dependencyManagement>
@@ -83,6 +86,21 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<distributionManagement>
+	    <repository>
+	      <id>nexus</id>
+	      <name>Landmark Technologies Releases Nexus Repository</name>
+	      <url>http://172.31.3.184:8181/apriltech/repository/Fintech-releases/</url>
+	    </repository>
+	    
+	    <snapshotRepository>
+	      <id>nexus</id>
+	      <name>Landmark Technologies Snapshot Nexus Repository </name>
+	      <url>http://172.31.3.184:8181/apriltech/repository/Fintech-Snapshots/</url>
+	    </snapshotRepository>
+	    
+	</distributionManagement>
+	
 	<build>
 		<plugins>
 			<plugin>
